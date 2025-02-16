@@ -1,6 +1,8 @@
 #ifndef __KEY_H_
 #define __KEY_H_
 
+#include "./SYSTEM/sys/sys.h"
+
 /* 引脚，端口，时钟使能定义 */
 #define KEY0_GPIO_PORT GPIOE
 #define KEY0_GPIO_PIN GPIO_PIN_4
