@@ -40,18 +40,4 @@
 /// @brief 外部中断初始化程序
 void extix_init(void);
 
-/// @brief KEY0 外部中断服务程序
-/// @param  无
-void KEY0_INT_IRQHandler(void);
-/// @brief KEY1 外部中断服务程序
-/// @param  无
-void KEY1_INT_IRQHandler(void);
-/// @brief WKUP 外部中断服务程序
-/// @param  无
-void WKUP_INT_IRQHandler(void);
-
-/// @brief 中断服务程序中要做的事情；在HAL库中，所有中断服务函数都是在调用此函数
-/// @param GIPO_Pin: 中断引脚号
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin);
-
 #endif
