@@ -2,9 +2,7 @@
 #include "./SYSTEM/usart/usart.h"
 #include "./SYSTEM/delay/delay.h"
 #include "./BSP/led/led.h"
-//#include "./BSP/usart/usart.h"
-
-extern UART_HandleTypeDef uartx_handle;
+// #include "./BSP/usart/usart.h"
 
 int main(void)
 {
@@ -14,7 +12,7 @@ int main(void)
 	HAL_Init();							/* 初始化 HAL 库 */
 	sys_stm32_clock_init(RCC_PLL_MUL9); /* 设置时钟, 72Mhz */
 	delay_init(72);						/* 延时初始化 */
-	usart_init(72, 115200);
+	usart_init(115200);
 	/*用户初始化*/
 	led_init(); /* LED 初始化 */
 
@@ -25,9 +23,9 @@ int main(void)
 			len = g_usart_rx_sta & 0x3fff; /* 得到此次接收到的数据长度 */
 			printf("\r\n 您发送的消息为:\r\n");
 			/*发送接收到的数据*/
-			HAL_UART_Transmit(&uartx_handle, (uint8_t *)g_usart_rx_buf, len, 1000);
+			HAL_UART_Transmit(&g_uart1_handle, (uint8_t *)g_usart_rx_buf, len, 1000);
 			/*等待发送结束*/
-			while (__HAL_UART_GET_FLAG(&uartx_handle, UART_FLAG_TC) != SET)
+			while (__HAL_UART_GET_FLAG(&g_uart1_handle, UART_FLAG_TC) != SET)
 				;
 			printf("\r\n\r\n"); /* 插入换行 */
 			g_usart_rx_sta = 0;

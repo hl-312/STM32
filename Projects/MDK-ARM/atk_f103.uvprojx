@@ -528,16 +528,6 @@
               <FileType>5</FileType>
               <FilePath>..\..\Drivers\BSP\exti\exti.h</FilePath>
             </File>
-            <File>
-              <FileName>usart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\..\Drivers\BSP\usart\usart.c</FilePath>
-            </File>
-            <File>
-              <FileName>usart.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\Drivers\BSP\usart\usart.h</FilePath>
-            </File>
           </Files>
         </Group>
       </Groups>
