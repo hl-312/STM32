@@ -21,7 +21,7 @@ int main(void)
 		if (g_usart_rx_sta & 0x8000) /* 接收到了数据? */
 		{
 			len = g_usart_rx_sta & 0x3fff; /* 得到此次接收到的数据长度 */
-			printf("\r\n 您发送的消息为:\r\n");
+			printf("\r\n您发送的消息为:\r\n");
 			/*发送接收到的数据*/
 			HAL_UART_Transmit(&g_uart1_handle, (uint8_t *)g_usart_rx_buf, len, 1000);
 			/*等待发送结束*/
