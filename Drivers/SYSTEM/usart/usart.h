@@ -34,7 +34,7 @@
  * 注意: 通过修改这12个宏定义,可以支持USART1~UART7任意一个串口.
  */
 #define USART_TX_GPIO_PORT GPIOA
-#define USART_TX_GPIO_PIN SYS_GPIO_PIN9
+#define USART_TX_GPIO_PIN GPIO_PIN_9
 #define USART_TX_GPIO_CLK_ENABLE()    \
     do                                \
     {                                 \
@@ -42,7 +42,7 @@
     } while (0) /* PA口时钟使能 */
 
 #define USART_RX_GPIO_PORT GPIOA
-#define USART_RX_GPIO_PIN SYS_GPIO_PIN10
+#define USART_RX_GPIO_PIN GPIO_PIN_10
 #define USART_RX_GPIO_CLK_ENABLE()    \
     do                                \
     {                                 \

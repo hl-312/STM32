@@ -33,6 +33,11 @@
 #if defined (__ARMCC_VERSION) && (__ARMCC_VERSION >= 6010050)
   #include "cmsis_armclang.h"
 
+/*
+ * Arm Compiler 4/5
+ */
+#elif   defined ( __CC_ARM )
+  #include "cmsis_armcc.h"
 
 /*
  * GNU Compiler
@@ -248,14 +253,6 @@
     #warning No compiler specific solution for __RESTRICT. __RESTRICT is ignored.
     #define __RESTRICT
   #endif
-
-
-/*
- * Arm Compiler 4/5
- */
-#elif   defined ( __CC_ARM )
-  #include "cmsis_armcc.h"
-
 
 
 #else
