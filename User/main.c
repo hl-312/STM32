@@ -27,8 +27,8 @@ int main(void)
 
 	while (1)
 	{
-		delay_ms(28);
+		delay_ms(29);
 		HAL_WWDG_Refresh(&g_wwdg_handle);
-		//printf("ÒÑÎ¹¹·¡£\r\n");
+		printf("ÒÑÎ¹¹·¡£\r\n");
 	}
 }
