@@ -2,7 +2,7 @@
 #include "./SYSTEM/usart/usart.h"
 #include "./SYSTEM/delay/delay.h"
 #include "./BSP/led/led.h"
-#include "./BSP/iwdg/iwdg.h"
+#include "./BSP/wwdg/wwdg.h"
 
 int main(void)
 {
@@ -13,13 +13,22 @@ int main(void)
 	usart_init(115200);
 	/*用户初始化*/
 	led_init(); /* LED 初始化 */
-	printf("您还没有及时喂狗！\r\n");
-	iwdg_init(IWDG_PRESCALER_64, 1250); /*定时2s*/
+	if(__HAL_RCC_GET_FLAG(RCC_FLAG_WWDGRST) != RESET)
+	{
+		printf("窗口看门狗复位！\r\n");
+		__HAL_RCC_CLEAR_RESET_FLAGS();
+	}else
+	{
+		printf("外部复位！\r\n");
+	}
+	delay_ms(500);
+	printf("请在窗口期内喂狗！\r\n\r\n");
+	wwdg_init(0x7f,0x5f,WWDG_PRESCALER_8);
 
 	while (1)
 	{
-		delay_ms(2020);
-		iwdg_feed();
-		printf("已喂狗。\r\n");
+		delay_ms(28);
+		HAL_WWDG_Refresh(&g_wwdg_handle);
+		//printf("已喂狗。\r\n");
 	}
 }
