@@ -499,19 +499,9 @@
               <FilePath>..\..\Drivers\BSP\led\led.c</FilePath>
             </File>
             <File>
-              <FileName>led.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\Drivers\BSP\led\led.h</FilePath>
-            </File>
-            <File>
               <FileName>beep.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Drivers\BSP\beep\beep.c</FilePath>
-            </File>
-            <File>
-              <FileName>beep.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\Drivers\BSP\beep\beep.h</FilePath>
             </File>
             <File>
               <FileName>key.c</FileName>
@@ -519,19 +509,9 @@
               <FilePath>..\..\Drivers\BSP\key\key.c</FilePath>
             </File>
             <File>
-              <FileName>key.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\Drivers\BSP\key\key.h</FilePath>
-            </File>
-            <File>
               <FileName>exti.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\..\Drivers\BSP\exti\exti.c</FilePath>
-            </File>
-            <File>
-              <FileName>exti.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\Drivers\BSP\exti\exti.h</FilePath>
             </File>
             <File>
               <FileName>iwdg.c</FileName>
@@ -539,9 +519,9 @@
               <FilePath>..\..\Drivers\BSP\iwdg\iwdg.c</FilePath>
             </File>
             <File>
-              <FileName>iwdg.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>..\..\Drivers\BSP\iwdg\iwdg.h</FilePath>
+              <FileName>wwdg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\Drivers\BSP\wwdg\wwdg.c</FilePath>
             </File>
           </Files>
         </Group>

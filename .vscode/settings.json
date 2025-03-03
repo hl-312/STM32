@@ -1,5 +1,7 @@
 {
     "files.associations": {
-        "exti.h": "c"
+        "exti.h": "c",
+        "wwdg.h": "c",
+        "sys.h": "c"
     }
 }
