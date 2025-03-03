@@ -40,6 +40,6 @@ void WWDG_IRQHandler(void)
 /*重定义具体中断服务函数，即中断流程里的处理步骤，由 HAL 公共中断服务回调具体处理函数 */
 void HAL_WWDG_EarlyWakeupCallback(WWDG_HandleTypeDef *hwwdg)
 {
-    // HAL_WWDG_Refresh(&g_wwdg_handle);
+    HAL_WWDG_Refresh(&g_wwdg_handle);
     LED1_TOGGLE();
 }

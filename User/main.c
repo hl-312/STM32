@@ -27,8 +27,9 @@ int main(void)
 
 	while (1)
 	{
-		delay_ms(29);
+		delay_ms(87);
 		HAL_WWDG_Refresh(&g_wwdg_handle);
+		LED0_TOGGLE();
 		printf("ÒÑÎ¹¹·¡£\r\n");
 	}
 }
