@@ -2,7 +2,7 @@
 #include "./SYSTEM/usart/usart.h"
 #include "./SYSTEM/delay/delay.h"
 #include "./BSP/led/led.h"
-#include "./BSP/wwdg/wwdg.h"
+#include "./BSP/btim/btim.h"
 
 int main(void)
 {
@@ -13,23 +13,9 @@ int main(void)
 	usart_init(115200);
 	/*用户初始化*/
 	led_init(); /* LED 初始化 */
-	if(__HAL_RCC_GET_FLAG(RCC_FLAG_WWDGRST) != RESET)
-	{
-		printf("窗口看门狗复位！\r\n");
-		__HAL_RCC_CLEAR_RESET_FLAGS();
-	}else
-	{
-		printf("外部复位！\r\n");
-	}
-	delay_ms(500);
-	printf("请在窗口期内喂狗！\r\n\r\n");
-	wwdg_init(0x7f,0x5f,WWDG_PRESCALER_8);
+	btim_timx_int_init(7199,4999);
 
 	while (1)
 	{
-		delay_ms(87);
-		HAL_WWDG_Refresh(&g_wwdg_handle);
-		LED0_TOGGLE();
-		printf("已喂狗。\r\n");
 	}
 }

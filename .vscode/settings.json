@@ -3,6 +3,7 @@
         "exti.h": "c",
         "wwdg.h": "c",
         "sys.h": "c",
-        "led.h": "c"
+        "led.h": "c",
+        "iwdg.h": "c"
     }
 }
